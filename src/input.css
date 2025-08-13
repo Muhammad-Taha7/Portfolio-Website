@@ -13,3 +13,68 @@
     animation: fadeIn 1s ease-in-out forwards;
   }
 }
+
+
+
+/* ===== Locomotive Scroll — Base ===== */
+@layer base {
+  html, body { height: 100%; }
+  /* Locomotive JS init hone par native scroll band */
+  html.has-scroll-smooth,
+  .has-scroll-smooth body { overflow: hidden; }
+
+  /* Scroll container must fill viewport */
+  [data-scroll-container] { min-height: 100vh; }
+
+  /* iOS bounce & pull-to-refresh issues kam */
+  body { overscroll-behavior: none; }
+}
+
+/* ===== Sections & Reveal helpers (optional) ===== */
+@layer components {
+  /* Helpful for section-based layouts */
+  [data-scroll-section] { position: relative; }
+
+  /* Simple reveal-on-view helper (Locomotive adds .is-inview) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+    will-change: opacity, transform;
+  }
+  .is-inview.reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Mobile behavior ===== */
+/* If you DISABLE smooth on mobile in JS (recommended), no extra CSS needed.
+   But if you ever want native scroll on small screens regardless, add class
+   `allow-mobile-scroll` to <html> via JS and these rules will allow it. */
+@layer utilities {
+  @media (max-width: 1024px) {
+    html.allow-mobile-scroll,
+    html.allow-mobile-scroll.has-scroll-smooth,
+    html.allow-mobile-scroll.has-scroll-smooth body {
+      overflow: auto;
+    }
+  }
+}
+
+/* ===== Optional: custom scrollbar (Locomotive's built-in markup) ===== */
+@layer components {
+  .c-scrollbar {
+    position: fixed;
+    top: 0; right: 10px;
+    width: 7px; height: 100vh;
+    opacity: 0; transition: opacity .3s;
+    pointer-events: none;
+  }
+  .c-scrollbar:hover { opacity: 1; }
+  .c-scrollbar_thumb {
+    position: absolute; top: 0; right: 0; width: 100%;
+    border-radius: 4px;
+    background: rgba(251,191,36,.7); /* amber-400 */
+  }
+}

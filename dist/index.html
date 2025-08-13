@@ -7,6 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
   <script src="script.js" defer></script>
   <script>
     tailwind.config = {
@@ -70,7 +71,7 @@
   </script>
 </head>
 <body class="bg-gray-900 text-white font-inter overflow-x-hidden">
-
+ <div data-scroll-container>
 <!-- Preloader -->
 <div id="preloader" class="fixed inset-0 flex items-center justify-center bg-gray-900 z-50 transition-opacity duration-1000">
   <div class="text-center">
@@ -366,7 +367,7 @@
 
           <div class="skill-item">
             <div class="flex justify-between items-center mb-2">
-              <span class="text-lg font-medium">JavaScript</span>
+              <span class="text-lg font-medium">JS</span>
               <span class="text-amber-400 font-semibold">90%</span>
             </div>
             <div class="w-full h-3 bg-gray-700 rounded-full overflow-hidden">
@@ -420,7 +421,7 @@
           </div>
           <div class="skill-card bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-lg">
             <i class="fab fa-js-square text-4xl text-yellow-500 mb-3"></i>
-            <p class="font-medium">JavaScript</p>
+            <p class="font-medium">JS</p>
           </div>
           <div class="skill-card bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-lg">
             <i class="fab fa-react text-4xl text-cyan-500 mb-3"></i>
@@ -867,8 +868,9 @@
 <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-amber-400 text-gray-900 rounded-full flex items-center justify-center opacity-0 invisible hover:bg-amber-300 transition-all duration-300 hover:scale-110 z-40">
   <i class="fas fa-arrow-up"></i>
 </button>
+</div>
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 </body>
 </html>
