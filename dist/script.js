@@ -1,11 +1,3 @@
-const scroll = new LocomotiveScroll({
-  el: document.querySelector('[data-scroll-container]'),
-  smooth: true,
-  multiplier: 1,
-  lerp: 0.08,
-  smartphone: { smooth: false }, // mobile pe native scroll
-  tablet:     { smooth: false }  // tablet pe bhi
-});
 
 
 // Preloader
